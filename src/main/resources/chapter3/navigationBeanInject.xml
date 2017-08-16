@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="c" class="com.sh.test.spring.entity.NavigationC"></bean>
+    <bean id="b" class="com.sh.test.spring.entity.NavigationB">
+        <property name="lstNavigate"><list></list></property>
+        <property name="map"><map></map></property>
+        <property name="properties"><props></props></property>
+        <property name="array"><array></array></property>
+    </bean>
+
+
+    <bean id="a" class="com.sh.test.spring.entity.NavigationA">
+        <property name="navigationB" ref="b"></property>
+        <property name="navigationB.navigationC" ref="c"></property>
+        <property name="navigationB.lstNavigate" ref="c"></property>
+        <property name="navigationB.array" ref="c"></property>
+    </bean>
+
+</beans>

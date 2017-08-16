@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="A" class="com.sh.test.spring.entity.CircleA">
+        <constructor-arg index="0" ref="B"></constructor-arg>
+    </bean>
+
+    <bean id="B" class="com.sh.test.spring.entity.CircleB">
+        <constructor-arg index="0" ref="C"></constructor-arg>
+    </bean>
+
+    <bean id="C" class="com.sh.test.spring.entity.CircleC">
+        <constructor-arg index="0" ref="A"></constructor-arg>
+    </bean>
+
+</beans>

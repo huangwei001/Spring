@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="HelloServiceImpl7" class="com.sh.test.spring.serviceImpl.HelloServiceImpl7"></bean>
+
+    <bean id="bean1" factory-bean="HelloServiceImpl7" factory-method="getHelloService">
+        <constructor-arg index="0" value="测试构造注入1"></constructor-arg>
+        <constructor-arg index="1" value="1"></constructor-arg>
+    </bean>
+
+    <bean id="bean2" factory-bean="HelloServiceImpl7" factory-method="getHelloService">
+        <constructor-arg name="message" value="测试构造注入2"></constructor-arg>
+        <constructor-arg name="index" value="2"></constructor-arg>
+    </bean>
+
+    <bean id="bean3" factory-bean="HelloServiceImpl7" factory-method="getHelloService">
+        <constructor-arg type="java.lang.String" value="测试构造注入3"></constructor-arg>
+        <constructor-arg type="int" value="3"></constructor-arg>
+    </bean>
+</beans>
